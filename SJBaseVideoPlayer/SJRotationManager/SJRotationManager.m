@@ -96,6 +96,7 @@ NS_ASSUME_NONNULL_BEGIN
          [UIDevice.currentDevice beginGeneratingDeviceOrientationNotifications];
     }
     [self sj_observeWithNotification:UIDeviceOrientationDidChangeNotification target:nil usingBlock:^(SJRotationManager *_Nonnull self, NSNotification * _Nonnull note) {
+        return;
         [self deviceOrientationDidChangeNotify];
     }];
 }

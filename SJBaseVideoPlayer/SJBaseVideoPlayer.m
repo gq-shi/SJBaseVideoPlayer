@@ -120,6 +120,7 @@ typedef struct _SJPlayerControlInfo {
 @property (nonatomic, strong, nullable) SJBaseVideoPlayerAutoRefreshController *autoRefresh;
 @end
 
+/*
 @implementation UITabBarController (SJBaseVideoPlayerAdded)
 - (UIViewController *)sj_topViewController {
     if ( self.selectedIndex == NSNotFound )
@@ -214,7 +215,7 @@ sj_swizzleMethod(Class cls, SEL originalSelector, SEL swizzledSelector) {
     return nil;
 }
 @end
-
+*/
 @implementation SJBaseVideoPlayer {
     UIView *_view;
     SJVideoPlayerPresentView *_presentView;
@@ -2100,7 +2101,7 @@ sj_swizzleMethod(Class cls, SEL originalSelector, SEL swizzledSelector) {
         if ( !self ) return NO;
         if ( !self.view.superview ) return NO;
         UIWindow *_Nullable window = self.view.window;
-        if ( window && !window.isKeyWindow ) return NO;
+//        if ( window && !window.isKeyWindow ) return NO;
         if ( self.touchedOnTheScrollView ) return NO;
         if ( self.isPlayOnScrollView && !self.isScrollAppeared ) return NO;
         if ( self.isLockedScreen ) return NO;
